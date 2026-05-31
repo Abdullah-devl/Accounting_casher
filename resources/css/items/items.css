@@ -1,0 +1,42 @@
+/* تنسيقات شبكة العرض والبحث */
+.items-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.search-box { position: relative; width: 300px; }
+.search-box i { position: absolute; right: 10px; top: 12px; color: #aaa; }
+.search-box input { width: 100%; padding: 10px 35px 10px 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+
+.table-responsive { overflow-x: auto; }
+#itemsTable { width: 100%; border-collapse: collapse; }
+#itemsTable th, #itemsTable td { padding: 12px; border-bottom: 1px solid #eee; text-align: right; }
+#itemsTable th { background: #f8f9fa; color: #555; }
+.row-frozen { background-color: #fff3cd !important; opacity: 0.7; }
+
+/* الصور المصغرة */
+.item-thumbnail { width: 40px; height: 40px; border-radius: 5px; object-fit: cover; }
+.no-image { width: 40px; height: 40px; background: #eee; color: #aaa; display: flex; align-items: center; justify-content: center; border-radius: 5px; font-size: 20px; }
+
+/* الشارات (Badges) */
+.badge-success { background: #d4edda; color: #155724; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
+.badge-danger { background: #f8d7da; color: #721c24; padding: 3px 8px; border-radius: 12px; font-size: 12px; }
+
+/* تنسيقات النوافذ المنبثقة (Modal) */
+.custom-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto; }
+.modal-content.modal-lg { width: 800px; max-width: 95%; margin: 40px auto; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.modal-header { padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
+.modal-body { padding: 20px; }
+.modal-footer { padding: 15px 20px; border-top: 1px solid #eee; display: flex; gap: 10px; }
+
+/* تبويبات النموذج الداخلية */
+.form-tabs { border-bottom: 2px solid #eee; margin-bottom: 20px; display: flex; gap: 10px; }
+.ftab-btn { background: none; border: none; padding: 10px 15px; font-weight: bold; color: #777; cursor: pointer; border-bottom: 3px solid transparent; }
+.ftab-btn.active { color: #0d6efd; border-color: #0d6efd; }
+.ftab-content { display: none; }
+.ftab-content.active { display: block; animation: fadeIn 0.3s; }
+
+/* تخطيطات الشبكة الداخلية */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.grid-4 { display: grid; grid-template-columns: 2fr 2fr 1fr 1fr; gap: 10px; }
+.grid-5 { display: grid; grid-template-columns: 2fr 2fr 1fr 1fr 1fr; gap: 10px; }
+.unit-box { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 15px; border: 1px solid #e9ecef; }
+.unit-box h4 { margin-top: 0; color: #495057; font-size: 14px; margin-bottom: 10px; border-bottom: 1px solid #dee2e6; padding-bottom: 5px; }

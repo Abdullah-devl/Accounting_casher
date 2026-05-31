@@ -1,0 +1,35 @@
+
+.invoice-container { display: flex; flex-direction: column; gap: 20px; }
+.invoice-header-section, .invoice-details-section, .invoice-footer-section { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.invoice-container h3 { margin-top: 0; color: #333; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.form-group { margin-bottom: 10px; }
+.form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+.form-control { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box; }
+.form-control:focus { border-color: #0d6efd; outline: none; }
+
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.btn-sm { padding: 5px 15px; font-size: 14px; }
+
+/* الجدول الديناميكي */
+.editable-table { width: 100%; border-collapse: collapse; }
+.editable-table th, .editable-table td { border: 1px solid #dee2e6; padding: 8px; text-align: center; vertical-align: middle; }
+.editable-table th { background: #f8f9fa; color: #495057; }
+.editable-table input { width: 100%; border: none; padding: 8px; text-align: center; background: transparent; box-sizing: border-box; outline: none; }
+.editable-table input:focus { background: #e9ecef; }
+.search-input { text-align: right !important; }
+
+/* الإجماليات */
+.invoice-footer-section { display: flex; justify-content: space-between; align-items: flex-end; }
+.totals-box { width: 40%; background: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px solid #eee; }
+.total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: bold; }
+.total-input { width: 120px; text-align: left; font-weight: bold; border: 1px solid #ccc; padding: 5px; border-radius: 3px; background: white; }
+.final-total { border-top: 2px dashed #ccc; padding-top: 10px; margin-top: 10px; font-size: 18px; color: #dc3545; }
+.final-total .total-input { background: #fff3cd; color: #dc3545; font-size: 18px; }
+
+.actions-box { display: flex; gap: 15px; }
+.btn-lg { padding: 15px 30px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; color: white; font-weight: bold; }
+.btn-success { background: #28a745; }
+.btn-secondary { background: #6c757d; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.btn-danger-icon { background: #dc3545; color: white; border: none; padding: 6px 10px; border-radius: 3px; cursor: pointer; }

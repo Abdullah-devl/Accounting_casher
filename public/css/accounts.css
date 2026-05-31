@@ -1,0 +1,53 @@
+/* رسائل الأخطاء */
+.alert-error { background: #f8d7da; color: #721c24; padding: 15px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #f5c6cb; }
+
+/* الحاوية والشجرة */
+.accounts-container { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.header-actions { margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+
+.root-tree, .nested-tree { list-style: none; padding-right: 20px; margin: 0; }
+.root-tree { padding-right: 0; }
+.tree-node { margin: 5px 0; }
+.node-content { display: flex; align-items: center; padding: 10px 15px; background: #fdfdfd; border: 1px solid #eee; border-radius: 5px; transition: 0.2s; }
+.node-content:hover { background: #f1f8ff; border-color: #cce5ff; }
+
+/* الحساب المجمد */
+.frozen-account { background: #fff3cd; border-color: #ffeeba; opacity: 0.8; }
+
+.toggle-icon { cursor: pointer; display: inline-block; width: 25px; text-align: center; color: #6c757d; }
+.spacer { width: 25px; display: inline-block; }
+.folder-icon { color: #ffc107; margin-left: 10px; font-size: 18px; }
+.file-icon { color: #28a745; margin-left: 10px; font-size: 18px; }
+
+.acc-code { font-weight: bold; color: #0d6efd; width: 80px; display: inline-block; }
+.acc-name { flex-grow: 1; font-size: 16px; font-weight: 500; }
+
+/* الشارات (Badges) */
+.badge-main { background: #6c757d; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-right: 10px; }
+.badge-sub { background: #17a2b8; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-right: 10px; }
+.badge-frozen { background: #dc3545; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; }
+
+/* أزرار الإجراءات */
+.node-actions { display: none; gap: 8px; }
+.node-content:hover .node-actions { display: flex; }
+.btn-action { background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; transition: 0.2s; }
+.btn-action:hover { background: #eee; }
+.btn-statement { color: #0d6efd; border-color: #0d6efd; }
+.btn-add { color: #28a745; border-color: #28a745; }
+.btn-edit { color: #ffc107; border-color: #ffc107; }
+.btn-delete { color: #dc3545; border-color: #dc3545; }
+
+.nested-tree { display: none; margin-top: 5px; border-right: 1px dashed #ccc; padding-right: 30px; }
+.nested-tree.active { display: block; }
+
+/* النوافذ المنبثقة (Modals) */
+.custom-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+.modal-content { background: white; width: 500px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: slideDown 0.3s ease; }
+@keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-header { padding: 15px 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.modal-header h3 { margin: 0; }
+.close-modal { font-size: 24px; cursor: pointer; color: #aaa; }
+.close-modal:hover { color: #333; }
+.modal-body { padding: 20px; }
+.modal-footer { padding: 15px 20px; border-top: 1px solid #eee; text-align: left; }
+.btn-secondary { background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }

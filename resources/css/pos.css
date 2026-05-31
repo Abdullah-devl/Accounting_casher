@@ -1,0 +1,151 @@
+/* =========================================
+   ملف تنسيقات شاشة الكاشير (POS)
+   ========================================= */
+
+/* إعدادات عامة */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+}
+
+/* الحاوية الرئيسية */
+.pos-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* العناوين */
+h1, h3 {
+    color: #333;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* رسائل النجاح والخطأ */
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
+
+/* تنسيق الجداول (منطقة الأصناف) */
+.pos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.pos-table th {
+    background-color: #f8f9fa;
+    padding: 12px;
+    text-align: right;
+    border-bottom: 2px solid #dee2e6;
+    color: #495057;
+}
+
+.pos-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* حقول الإدخال */
+.form-control {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-control[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* الأزرار */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-success {
+    background-color: #198754;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+}
+
+/* منطقة الإجماليات */
+.totals-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+}
+
+.totals-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.totals-row label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.total-final input {
+    font-size: 20px;
+    font-weight: bold;
+    color: #dc3545;
+    background-color: #fff;
+}

@@ -1,0 +1,118 @@
+/* =========================================
+   التنسيق الأساسي للنظام (Master Layout)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f4f6f9;
+    direction: rtl;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* القائمة الجانبية (Sidebar) */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.sidebar .brand {
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #212529;
+    border-bottom: 1px solid #4b545c;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #c2c7d0;
+    text-decoration: none;
+    border-bottom: 1px solid #4b545c;
+    transition: background 0.2s, color 0.2s, padding-right 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #495057;
+    color: #fff;
+    padding-right: 25px; /* حركة بسيطة عند تمرير الماوس */
+}
+
+.sidebar ul li a.active {
+    background-color: #007bff;
+    color: #fff;
+    border-right: 4px solid #0056b3;
+}
+
+.sidebar ul li a i {
+    margin-left: 12px;
+    width: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* منطقة المحتوى الرئيسية */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #f4f6f9;
+}
+
+/* الترويسة العلوية (Topbar) */
+.topbar {
+    background-color: #fff;
+    padding: 15px 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.topbar .page-title h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.topbar .user-info {
+    font-weight: bold;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar .user-info i {
+    font-size: 24px;
+    color: #6c757d;
+}
+
+/* المنطقة الديناميكية التي تتغير حسب الشاشة */
+.content-wrapper {
+    padding: 20px 25px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
