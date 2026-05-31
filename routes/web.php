@@ -14,11 +14,20 @@ use App\Http\Controllers\PosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    if (auth()->check()) {
+        return redirect()->route('dashboard');
+    }
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $stats = [
+        'items_count' => \App\Models\Item::count(),
+        'accounts_count' => \App\Models\Account::count(),
+        'invoices_count' => \App\Models\Invoice::count(),
+        'shifts_count' => \App\Models\Shift::count(),
+    ];
+    return view('dashboard', compact('stats'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
