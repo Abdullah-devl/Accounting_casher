@@ -65,10 +65,10 @@
                 <tbody id="items-tbody">
                     <tr class="item-row">
                         <td>
-                            <input type="text" name="items[0][item_id]" class="form-control" placeholder="كود الصنف أو الباركود">
+                            <input type="text" name="items[0][item_id]" class="form-control input-item-id" placeholder="كود الصنف أو الباركود">
                             <input type="hidden" name="items[0][cost]" value="0">
                         </td>
-                        <td><input type="text" name="items[0][unit]" class="form-control" value="حبة" readonly></td>
+                        <td><input type="text" name="items[0][unit]" class="form-control input-unit" value="حبة"></td>
                         <td><input type="number" name="items[0][qty]" class="form-control input-qty" value="1" min="1"></td>
                         <td><input type="number" name="items[0][price]" class="form-control input-price" value="0" min="0" step="0.01"></td>
                         <td><input type="number" name="items[0][vat]" class="form-control input-vat" value="15" readonly></td>

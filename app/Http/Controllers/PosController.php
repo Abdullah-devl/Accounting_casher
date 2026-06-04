@@ -39,6 +39,8 @@ class PosController extends Controller
         $item = Item::where('barcode1', $barcode)
                     ->orWhere('barcode2', $barcode)
                     ->orWhere('barcode3', $barcode)
+                    ->orWhere('NUMBER', $barcode)
+                    ->orWhere('GUID', $barcode)
                     ->first();
 
         if ($item && !$item->FREEZ) {
