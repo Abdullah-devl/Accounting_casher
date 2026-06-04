@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شاشة الكاشير | MgaSoft POS</title>
+    <title>شاشة الكاشير | النظام المحاسبي الأول</title>
     
     <link rel="stylesheet" href="{{ asset('css/pos.css') }}">
 </head>

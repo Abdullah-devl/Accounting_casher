@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', 'نظام MgaSoft')</title>
+    <title>@yield('title', 'النظام المحاسبي الأول')</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -16,7 +16,7 @@
 
     <aside class="sidebar">
         <div class="brand">
-            <i class="fas fa-boxes"></i> MgaSoft POS
+            <i class="fas fa-boxes"></i> النظام المحاسبي الأول
         </div>
         <ul>
             <li><a href="{{ route('invoices.create') }}" class="{{ request()->routeIs('invoices.create') ? 'active' : '' }}"><i class="fas fa-cash-register"></i> نقطة البيع (الكاشير)</a></li>
