@@ -121,6 +121,7 @@ return new class extends Migration
             $table->double('VC')->default(1.0);
             $table->boolean('CT_PER')->default(true);
             $table->double('PER')->default(15.0);
+            $table->string('PATH', 500)->nullable();
         });
 
         // 9. TYPE_BILL (Invoice configurations)
