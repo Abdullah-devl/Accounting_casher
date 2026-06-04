@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شاشة الكاشير | النظام المحاسبي الأول</title>
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/pos.css') }}">
 </head>
 <body>
 
     <div class="pos-container">
-        <h1>نظام المبيعات - نقطة البيع</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; margin-bottom: 20px;">
+            <h1 style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">نظام المبيعات - نقطة البيع</h1>
+            <div style="display: flex; gap: 10px;">
+                <a href="{{ route('shifts.index') }}" class="btn" style="background-color: #17a2b8; color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; display: inline-flex; align-items: center; gap: 6px;"><i class="fas fa-box-open"></i> إدارة ورديتي</a>
+                <a href="{{ url('/') }}" class="btn" style="background-color: #343a40; color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; display: inline-flex; align-items: center; gap: 6px;"><i class="fas fa-home"></i> العودة للرئيسية</a>
+            </div>
+        </div>
 
         @if(session('success'))
             <div class="alert-success">

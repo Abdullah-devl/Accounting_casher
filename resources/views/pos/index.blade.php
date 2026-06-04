@@ -16,6 +16,7 @@
             <button class="btn btn-warning" onclick="holdInvoice()"><i class="fas fa-pause"></i> تعليق</button>
             <button class="btn btn-secondary" onclick="showHeldInvoices()"><i class="fas fa-list"></i> المعلقة ({{ $heldInvoices->count() }})</button>
             <button class="btn btn-danger" onclick="clearCart()"><i class="fas fa-trash"></i> إلغاء</button>
+            <a href="{{ route('shifts.index') }}" class="btn" style="background: #17a2b8; text-align: center; text-decoration: none;"><i class="fas fa-box-open"></i> الوردية</a>
             <a href="{{ url('/') }}" class="btn btn-dark"><i class="fas fa-home"></i> خروج</a>
         </div>
 
