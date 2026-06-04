@@ -1,29 +1,55 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ar" dir="rtl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'النظام المحاسبي الأول') }}</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Custom Auth Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
+    <body>
+        <div class="login-wrapper">
+            <!-- الجانب التعريفي (البانر) -->
+            <div class="login-banner">
+                <div class="banner-content">
+                    <a href="{{ url('/') }}" class="banner-logo">
+                        <i class="fas fa-boxes"></i>
+                        <span>{{ config('app.name', 'النظام المحاسبي الأول') }}</span>
+                    </a>
+                    <h1 class="banner-title">إدارة أعمالك المالية والمبيعات بدقة وسهولة متناهية</h1>
+                    <p class="banner-text">الخيار الاحترافي الأول للمحلات والمؤسسات لإدارة نقاط البيع، المخازن، والتقارير المالية بدقة واحترافية.</p>
+                    
+                    <div class="banner-bullets">
+                        <div class="bullet-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>شاشة كاشير (POS) تفاعلية وسريعة تدعم الدفع المختلط.</span>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>دليل الحسابات وقيود اليومية الآلية والمستندات.</span>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>إدارة الورديات وإغلاق الصناديق مع تتبع العجز والزيادة.</span>
+                        </div>
+                        <div class="bullet-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>تقارير مالية تفصيلية، موازين المراجعة والأرباح.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+            <!-- جانب نموذج الإدخال -->
+            <div class="login-form-side">
+                <div class="form-container">
+                    {{ $slot }}
+                </div>
             </div>
         </div>
     </body>

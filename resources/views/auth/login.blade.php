@@ -1,47 +1,74 @@
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <div class="form-header">
+        <h2>تسجيل الدخول</h2>
+        <p>مرحباً بك مجدداً! يرجى إدخال بياناتك للدخول إلى النظام</p>
+    </div>
+
+    <!-- حالة الجلسة وتنبيهات الأخطاء -->
+    @if ($errors->any())
+        <div class="alert-container">
+            <i class="fas fa-exclamation-circle"></i>
+            <div>
+                @foreach ($errors->all() as $error)
+                    <div>{{ $error }}</div>
+                @endforeach
+            </div>
+        </div>
+    @endif
+
+    @if (session('status'))
+        <div class="status-container">
+            <i class="fas fa-check-circle"></i>
+            <div>{{ session('status') }}</div>
+        </div>
+    @endif
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <!-- البريد الإلكتروني -->
+        <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <div class="input-wrapper">
+                <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}" required autofocus autocomplete="username" placeholder="name@company.com">
+                <i class="fas fa-envelope"></i>
+            </div>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <!-- كلمة المرور -->
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="password">كلمة المرور</label>
+            <div class="input-wrapper">
+                <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+                <i class="fas fa-lock"></i>
+            </div>
         </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+        <!-- تذكرني ونسيان كلمة المرور -->
+        <div class="form-options" style="margin-top: 20px;">
+            <label for="remember_me" class="remember-me">
+                <input id="remember_me" type="checkbox" name="remember">
+                <span>تذكرني على هذا الجهاز</span>
             </label>
-        </div>
 
-        <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                <a class="forgot-password-link" href="{{ route('password.request') }}">
+                    نسيت كلمة المرور؟
                 </a>
             @endif
+        </div>
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+        <!-- أزرار الدخول والعودة -->
+        <div style="margin-top: 30px;">
+            <button type="submit" class="btn-login-submit">
+                دخول إلى لوحة التحكم <i class="fas fa-sign-in-alt" style="margin-right: 6px;"></i>
+            </button>
         </div>
     </form>
+
+    <div style="text-align: center; margin-top: 10px;">
+        <a href="{{ url('/') }}" class="btn-back-home">
+            <i class="fas fa-arrow-right"></i> الرجوع للرئيسية
+        </a>
+    </div>
 </x-guest-layout>
