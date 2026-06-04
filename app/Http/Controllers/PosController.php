@@ -20,6 +20,13 @@ class PosController extends Controller
     // 1. عرض شاشة الكاشير
     public function index()
     {
+        $userId = Auth::id() ?? \App\Models\User::first()->GUID;
+        $activeShift = Shift::where('GUSER', $userId)->where('CP', false)->first();
+
+        if (!$activeShift) {
+            return redirect()->route('shifts.index')->with('error', 'يجب فتح وردية جديدة أولاً لبدء البيع في شاشة الكاشير!');
+        }
+
         // جلب التصنيفات مع أصنافها لعرضها كأزرار سريعة
         $categories = Category::with(['items' => function($query) {
             $query->where('FREEZ', false);

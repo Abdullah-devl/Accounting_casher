@@ -16,13 +16,27 @@ class InvoiceController extends Controller
     // 1. دالة لعرض شاشة الكاشير (الـ View)
     public function create()
     {
+        $userId = \Illuminate\Support\Facades\Auth::id() ?? \App\Models\User::first()->GUID;
+        $activeShift = \App\Models\Shift::where('GUSER', $userId)->where('CP', false)->first();
+
+        if (!$activeShift) {
+            return redirect()->route('shifts.index')->with('error', 'يجب فتح وردية جديدة أولاً لبدء البيع في شاشة الفاتورة اليدوية!');
+        }
+
         return view('invoices.create'); 
     }
 
     // 2. دالة استقبال بيانات النموذج وحفظها
     public function store(Request $request)
     {
-        DB::transaction(function () use ($request) {
+        $userId = \Illuminate\Support\Facades\Auth::id() ?? \App\Models\User::first()->GUID;
+        $activeShift = \App\Models\Shift::where('GUSER', $userId)->where('CP', false)->first();
+
+        if (!$activeShift) {
+            return redirect()->route('shifts.index')->with('error', 'مرفوض: لا توجد وردية مفتوحة حالياً لحفظ الفاتورة!');
+        }
+
+        DB::transaction(function () use ($request, $activeShift) {
             $invoiceGuid = (string) Str::uuid();
             
             // حفظ رأس الفاتورة في جدول BILL1
@@ -39,6 +53,12 @@ class InvoiceController extends Controller
                 'WAIT' => false,
                 'TOT_PAY' => $request->payment_method == 0 ? $request->net_amount : 0.0,
                 'TOT_LEFT' => $request->payment_method == 1 ? $request->net_amount : 0.0,
+            ]);
+
+            // ربط الفاتورة بالوردية في جدول TB_BACH2
+            DB::table('TB_BACH2')->insert([
+                'PARENTGUID' => $activeShift->GUID,
+                'GUID_BILL' => $invoiceGuid,
             ]);
 
             foreach ($request->items as $itemData) {

@@ -36,6 +36,13 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        $userId = Auth::id() ?? \App\Models\User::first()->GUID;
+        $activeShift = \App\Models\Shift::where('GUSER', $userId)->where('CP', false)->first();
+
+        if ($activeShift) {
+            return redirect()->route('shifts.index')->with('error', 'تنبيه: لا يمكنك تسجيل الخروج بينما الوردية ما زالت مفتوحة! يرجى إغلاق الوردية الحالية وجرد الصندوق أولاً.');
+        }
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
